@@ -14,6 +14,7 @@ Detecção de Faces
 
 É possível realizar a detecção de faces através de uma comparação em cascata. A biblioteca OpenCV oferece algoritmos já prontos para isso, basta carregar um arquivo que contém os dados para faces e indicar o local onde as faces devem ser procuradas.
 
+```python    
     # Carrega a base de dados para a comparação
     face_cascade =  face_cascade = cv.CascadeClassifier(
             "haarcascades/haarcascade_frontalface_default.xml")
@@ -30,3 +31,4 @@ Detecção de Faces
     for (point_x, point_y, width, height) in faces:
         self.draw_rectangle((point_x, point_y),
                             (point_x + width, point_y + height))
+```

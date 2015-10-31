@@ -18,6 +18,7 @@ Face Detection
 
 It's possible to find faces in captured video or picture through the cascade compartion. The OpenCV lib offers algoritms for taht, all you need to do is load a file that have the data for the face comparation and point the source for the faces to be found.
 
+```python
     # Load the cascade file
     face_cascade =  face_cascade = cv.CascadeClassifier(
             "haarcascades/haarcascade_frontalface_default.xml")
@@ -34,3 +35,4 @@ It's possible to find faces in captured video or picture through the cascade com
     for (point_x, point_y, width, height) in faces:
         self.draw_rectangle((point_x, point_y),
                             (point_x + width, point_y + height))
+```
