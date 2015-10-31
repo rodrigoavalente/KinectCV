@@ -1,36 +1,32 @@
-Avaible Languages:
-=================
-- [pt-br](README[pt-br].md)
-
-
 KinectCV
---------
-Computer Vision softwares with Kinect.
+========
 
-Dependencies
+Softwares de visão computacional com Kinect.
+
+Dependências
 ------------
 
 - [OpenCV](https://github.com/Itseez/opencv)
 - [Openkinect](https://github.com/OpenKinect/libfreenect)
 
-Face Detection
+Detecção de Faces
 -----------------
 
-It's possible to find faces in captured video or picture through the cascade compartion. The OpenCV lib offers algoritms for taht, all you need to do is load a file that have the data for the face comparation and point the source for the faces to be found.
+É possível realizar a detecção de faces através de uma comparação em cascata. A biblioteca OpenCV oferece algoritmos já prontos para isso, basta carregar um arquivo que contém os dados para faces e indicar o local onde as faces devem ser procuradas.
 
-    # Load the cascade file
+    # Carrega a base de dados para a comparação
     face_cascade =  face_cascade = cv.CascadeClassifier(
             "haarcascades/haarcascade_frontalface_default.xml")
-    # Do the search, returning an object
-    # with all the faces found.
+    # Faz a busca pelos rostos retornando um objeto
+    # com todos os rostos encontrados
     faces = face_cascade.detectMultiScale(
                 gray_frame,
                 scaleFactor=1.2,
                 minNeighbors=3,
                 minSize=(50, 50),
                 flags=cv.cv.CV_HAAR_SCALE_IMAGE)
-    # Draw an rectangle in the video source for each of the
-    # faces found.
+    # Navega pelo objeto desenhando um retângulo na
+    # imagem original no local onde foi encontrado as faces.
     for (point_x, point_y, width, height) in faces:
         self.draw_rectangle((point_x, point_y),
                             (point_x + width, point_y + height))

@@ -22,7 +22,6 @@ class Kinect():
 
     def detect_frontal_face(self):
         if len(self.rgb):
-            print "Primeiro if"
             face_cascade = cv.CascadeClassifier(
                 "haarcascades/haarcascade_frontalface_default.xml")
             gray_frame = cv.cvtColor(self.rgb, cv.COLOR_BGR2GRAY)
@@ -35,14 +34,12 @@ class Kinect():
                 flags=cv.cv.CV_HAAR_SCALE_IMAGE)
 
             if len(faces):
-                print "Segundo if"
                 for (point_x, point_y, width, height) in faces:
                     self.draw_rectangle((point_x, point_y),
                                         (point_x + width, point_y + height))
 
     def detect_profile_face(self):
         if len(self.rgb):
-            print "Primeiro if"
             face_cascade = cv.CascadeClassifier(
                 "haarcascades/haarcascade_profileface.xml")
             gray_frame = cv.cvtColor(self.rgb, cv.COLOR_BGR2GRAY)
@@ -55,7 +52,6 @@ class Kinect():
                 flags=cv.cv.CV_HAAR_SCALE_IMAGE)
 
             if len(faces):
-                print "Segundo if"
                 for (point_x, point_y, width, height) in faces:
                     self.draw_rectangle((point_x, point_y),
                                         (point_x + width, point_y + height))
